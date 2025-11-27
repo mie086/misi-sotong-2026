@@ -157,11 +157,11 @@
                     </a>
                 </li>
                 
-                <!-- NEW: Pengenalan Link -->
+                <!-- NEW COMBINED LINK: Pengenalan & Misi -->
                 <li>
-                    <a href="#introSection" onclick="toggleMenu()" class="flex items-center gap-3 text-gray-300 hover:text-white hover:bg-purple-600/20 p-3 rounded-lg transition group">
-                        <span class="bg-purple-500/10 text-purple-400 p-2 rounded-md group-hover:bg-purple-500 group-hover:text-white transition"><i class="fa-solid fa-circle-info w-4 text-center"></i></span>
-                        <span class="font-medium">Pengenalan</span>
+                    <a href="#introMissionSection" onclick="toggleMenu()" class="flex items-center gap-3 text-gray-300 hover:text-white hover:bg-purple-600/20 p-3 rounded-lg transition group">
+                        <span class="bg-purple-500/10 text-purple-400 p-2 rounded-md group-hover:bg-purple-500 group-hover:text-white transition"><i class="fa-solid fa-compass w-4 text-center"></i></span>
+                        <span class="font-medium">Pengenalan & Misi</span>
                     </a>
                 </li>
 
@@ -171,12 +171,8 @@
                         <span class="font-medium">Senarai Ahli</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#missionSection" onclick="toggleMenu()" class="flex items-center gap-3 text-gray-300 hover:text-white hover:bg-blue-600/20 p-3 rounded-lg transition group">
-                        <span class="bg-blue-500/10 text-blue-400 p-2 rounded-md group-hover:bg-blue-500 group-hover:text-white transition"><i class="fa-solid fa-anchor w-4 text-center"></i></span>
-                        <span class="font-medium">Misi Pemburu</span>
-                    </a>
-                </li>
+                <!-- REMOVED SEPARATE MISI LINK -->
+                
                  <li>
                     <a href="#tentativeSection" onclick="toggleMenu()" class="flex items-center gap-3 text-gray-300 hover:text-white hover:bg-indigo-600/20 p-3 rounded-lg transition group">
                         <span class="bg-indigo-500/10 text-indigo-400 p-2 rounded-md group-hover:bg-indigo-500 group-hover:text-white transition"><i class="fa-solid fa-map-location-dot w-4 text-center"></i></span>
@@ -270,27 +266,114 @@
             </div>
             <!-- END NEW: Image Slider Section -->
 
-            <!-- NEW: Introduction Section (Added ID for scrolling) -->
-            <div id="introSection" class="glass-panel rounded-2xl p-6 shadow-lg border-l-4 border-purple-500 relative overflow-hidden scroll-mt-28">
-                <div class="absolute right-0 top-0 opacity-5 transform translate-x-10 -translate-y-10">
-                    <i class="fa-solid fa-quote-right text-9xl text-purple-900"></i>
+            <!-- COMBINED SECTION: Pengenalan & Misi (Replaces old #introSection) -->
+            <div id="introMissionSection" class="glass-panel rounded-2xl shadow-lg border-t-4 border-purple-500 relative overflow-hidden scroll-mt-28">
+                <!-- Combined Header -->
+                <div class="bg-gradient-to-r from-purple-900 to-blue-900 p-4 text-white relative overflow-hidden">
+                    <div class="absolute right-0 top-0 opacity-10 transform translate-x-4 -translate-y-4">
+                        <i class="fa-solid fa-compass text-8xl"></i>
+                    </div>
+                    <h2 class="font-bold text-lg flex items-center gap-2 relative z-10">
+                        <i class="fa-solid fa-book-open-reader"></i> Pengenalan & Misi
+                    </h2>
+                    <p class="text-purple-200 text-xs uppercase tracking-wider relative z-10">Info Program & Objektif Trip</p>
                 </div>
-                <h2 class="font-bold text-xl text-gray-800 mb-3 flex items-center gap-2 relative z-10">
-                    <i class="fa-solid fa-circle-info text-purple-600"></i> Pengenalan
-                </h2>
-                <div class="text-gray-700 text-sm leading-relaxed space-y-3 relative z-10 text-justify">
-                    <p>
-                        Selamat datang ke laman rasmi <span class="text-emerald-600 font-bold">Misi Pemburuan Sotong 2026</span>! tempat impian laut dalam bertukar menjadi kenyataan. Ini bukan trip biasa, ini adalah panggilan untuk menawan Laut China Selatan, dipacu oleh dua ketua strategi yang sentiasa konsisten, <span class="font-bold text-gray-900">ManRemy</span> dan <span class="font-bold text-gray-900">John</span>. Dengan gabungan pengalaman dan disiplin mereka, peluang untuk menikmati sotong segar panas-panas di atas bot bukan lagi topik sembang kedai mamak.
-                    </p>
-                    <p>
-                        Melihat kegigihan para ahli yang mula menyusun jadual, melaras joran, dan mengasah cendawan masing-masing, bayang kejayaan misi ini semakin terang. Kita berkumpul sebagai satu armada dengan satu tekad: <span class="font-bold text-gray-900">penuhkan tong dan pulang sebagai legenda.</span>
-                    </p>
-                    <p class="text-xs bg-purple-50 p-3 rounded-lg border border-purple-100 text-purple-800">
-                        <i class="fa-solid fa-robot text-purple-500 mr-1"></i> <strong>Trivia Tech:</strong> Website pemudah cara yang canggih ini dibangunkan khas dengan kerjasama <span class="font-bold text-purple-700">Gemini</span> dan <span class="font-bold text-purple-700">ChatGpt</span>, platform AI yang berdedikasi memastikan pengurusan dana dan info program anda berjalan licin tanpa pening kepala.
-                    </p>
+
+                <div class="p-6 flex flex-col gap-6 text-sm leading-relaxed text-gray-700">
+                    
+                    <!-- SECTION 1: Pengenalan -->
+                    <div class="space-y-4 relative">
+                        <!-- Decorative Quote Icon -->
+                        <div class="absolute right-0 top-0 opacity-5 transform translate-x-2 -translate-y-2">
+                            <i class="fa-solid fa-quote-right text-6xl text-purple-900"></i>
+                        </div>
+
+                        <h3 class="font-bold text-gray-800 text-base border-b border-purple-100 pb-2 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-purple-600"></i> Intro Program
+                        </h3>
+                        
+                        <p class="text-justify">
+                            Selamat datang ke laman rasmi <span class="text-emerald-600 font-bold">Misi Pemburuan Sotong 2026</span>! tempat impian laut dalam bertukar menjadi kenyataan. Ini bukan trip biasa, ini adalah panggilan untuk menawan Laut China Selatan, dipacu oleh dua ketua strategi yang sentiasa konsisten, <span class="font-bold text-gray-900">ManRemy</span> dan <span class="font-bold text-gray-900">John</span>.
+                        </p>
+                        <p class="text-justify">
+                            Dengan gabungan pengalaman dan disiplin mereka, peluang untuk menikmati sotong segar panas-panas di atas bot bukan lagi topik sembang kedai mamak. Kita berkumpul sebagai satu armada dengan satu tekad: <span class="font-bold text-gray-900">penuhkan tong dan pulang sebagai legenda.</span>
+                        </p>
+                    </div>
+
+                    <!-- SECTION 2: Misi & Targets -->
+                    <!-- Removed md:border-l etc., added border-t for separation -->
+                    <div class="space-y-4 pt-4 border-t border-gray-100">
+                         <h3 class="font-bold text-gray-800 text-base border-b border-blue-100 pb-2 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-anchor text-blue-600"></i> Misi & Target
+                        </h3>
+
+                        <!-- Targets List -->
+                        <ul class="space-y-3 mt-3">
+                             <li class="flex items-start gap-3 text-xs text-gray-600">
+                                 <div class="bg-blue-100 p-1.5 rounded-lg text-blue-600 shrink-0">
+                                     <i class="fa-solid fa-weight-hanging text-sm"></i>
+                                 </div>
+                                 <div>
+                                     <span class="font-bold block text-gray-800">50kg Hasil Tangkapan</span>
+                                     Penuhkan tong ikan sampai tak muat.
+                                 </div>
+                             </li>
+                             <li class="flex items-start gap-3 text-xs text-gray-600">
+                                 <div class="bg-purple-100 p-1.5 rounded-lg text-purple-600 shrink-0">
+                                     <i class="fa-solid fa-utensils text-sm"></i>
+                                 </div>
+                                 <div>
+                                     <span class="font-bold block text-gray-800">Sotong Celup Tepung</span>
+                                     Masak segar atas bot. Fuhh!
+                                 </div>
+                             </li>
+                             <!-- NEW TARGET 1 -->
+                             <li class="flex items-start gap-3 text-xs text-gray-600">
+                                 <div class="bg-orange-100 p-1.5 rounded-lg text-orange-600 shrink-0">
+                                     <i class="fa-solid fa-trophy text-sm"></i>
+                                 </div>
+                                 <div>
+                                     <span class="font-bold block text-gray-800">Juara Mega Sotong</span>
+                                     Buruan sotong saiz 'gajah' untuk rekod trip.
+                                 </div>
+                             </li>
+                             <!-- NEW TARGET 2 -->
+                             <li class="flex items-start gap-3 text-xs text-gray-600">
+                                 <div class="bg-emerald-100 p-1.5 rounded-lg text-emerald-600 shrink-0">
+                                     <i class="fa-solid fa-heart-pulse text-sm"></i>
+                                 </div>
+                                 <div>
+                                     <span class="font-bold block text-gray-800">Sifar Mabuk Laut</span>
+                                     Misi kekal cergas mencadat sampai subuh.
+                                 </div>
+                             </li>
+                             <!-- NEW TARGET 3: Ukhuwah -->
+                             <li class="flex items-start gap-3 text-xs text-gray-600">
+                                 <div class="bg-pink-100 p-1.5 rounded-lg text-pink-600 shrink-0">
+                                     <!-- CHANGED ICON from fa-handshake-simple to fa-handshake -->
+                                     <i class="fa-solid fa-handshake text-sm"></i>
+                                 </div>
+                                 <div>
+                                     <span class="font-bold block text-gray-800">Ikatan Ukhuwah</span>
+                                     Eratkan silaturahim, biar rapat macam sotong dalam pukat.
+                                 </div>
+                             </li>
+                         </ul>
+
+                        <!-- Motto -->
+                        <div class="mt-4 pt-2 border-t border-dashed border-gray-200">
+                             <p class="text-[10px] font-bold text-gray-400 uppercase mb-1 text-center">Motto Rasmi</p>
+                             <p class="font-serif text-xs text-center text-slate-800 font-bold italic">"Selagi Tak Dapat, Jangan Mimpi Nak Balik! Biar Rentung Di Laut, Janji Tak Malu Di Darat!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Trivia Tech MOVED here (Bottom of section) -->
+                    <div class="text-xs bg-purple-50 p-3 rounded-lg border border-purple-100 text-purple-800 mt-2">
+                        <i class="fa-solid fa-robot text-purple-500 mr-1"></i> <strong>Trivia Tech:</strong> Website ini dibangunkan khas dengan kerjasama <span class="font-bold text-purple-700">Gemini</span> dan <span class="font-bold text-purple-700">ChatGpt</span> untuk melicinkan urusan anda.
+                    </div>
                 </div>
             </div>
-            <!-- END NEW: Introduction Section -->
+            <!-- END COMBINED SECTION -->
 
             <!-- Top Stats Section (Now stacks vertically by default) -->
             <div class="grid grid-cols-2 gap-4">
@@ -422,70 +505,6 @@
                                 <!-- Rows injected via JS -->
                             </tbody>
                         </table>
-                    </div>
-                </div>
-
-                <!-- 2. Info Panel "Pemburu Sotong" -->
-                <div id="missionSection" class="glass-panel rounded-2xl shadow-sm overflow-hidden h-fit border border-blue-100 scroll-mt-28">
-                    <!-- Header with Ocean Theme -->
-                    <div class="bg-ocean p-4 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 opacity-10 transform translate-x-4 -translate-y-4">
-                            <i class="fa-solid fa-anchor text-8xl"></i>
-                        </div>
-                        <h2 class="font-bold text-lg text-white mb-1 flex items-center gap-2">
-                            <i class="fa-solid fa-ship"></i> Misi Pemburu Sotong
-                        </h2>
-                        <p class="text-blue-200 text-xs uppercase tracking-wider">Edisi 2026: Laut China Selatan</p>
-                    </div>
-                    
-                    <div class="p-4 bg-white space-y-4">
-                        <!-- Welcome Message -->
-                        <div>
-                            <h3 class="font-bold text-gray-800 text-sm mb-2 border-l-4 border-blue-600 pl-2">Kata Aluan Kapten</h3>
-                            <p class="text-xs text-gray-600 leading-relaxed italic text-justify">
-                                "Salam Pemburu! Kasi 'lock' mental dan fizikal korang sebab kita bakal gegarkan Laut China Selatan dengan ekspedisi mencadat paling padu abad ini! Ombak rindu dah memanggil-manggil, joran pun dah menggigil nak beraksi. Tapi relaks, <span class="text-blue-700 font-bold">jangan risau pasal hasil sebab kita ada senjata rahsia: Abang Zasss, 'player' paling otai dalam arena fishing! Bila dia turun padang, sotong pun berebut-rebut nak naik bot sampai penuh tong—memang takkan kumpau punya!</span> Standby ubat mabuk laut siap-siap, kita kasi 'strike' sampai lebam!"
-                            </p>
-                        </div>
-
-                        <!-- Mission Targets -->
-                        <div>
-                             <h3 class="font-bold text-gray-800 text-sm mb-3 border-l-4 border-emerald-500 pl-2">Target Operasi</h3>
-                             <ul class="space-y-3">
-                                 <li class="flex items-start gap-3 text-xs text-gray-600">
-                                     <div class="bg-blue-100 p-1.5 rounded-lg text-blue-600">
-                                         <i class="fa-solid fa-weight-hanging text-sm"></i>
-                                     </div>
-                                     <div>
-                                         <span class="font-bold block text-gray-800">50kg Hasil Tangkapan</span>
-                                         Penuhkan tong ikan sampai tak muat.
-                                     </div>
-                                 </li>
-                                 <li class="flex items-start gap-3 text-xs text-gray-600">
-                                     <div class="bg-purple-100 p-1.5 rounded-lg text-purple-600">
-                                         <i class="fa-solid fa-utensils text-sm"></i>
-                                     </div>
-                                     <div>
-                                         <span class="font-bold block text-gray-800">Sotong Celup Tepung</span>
-                                         Masak segar atas bot. Fuhh!
-                                     </div>
-                                 </li>
-                                 <li class="flex items-start gap-3 text-xs text-gray-600">
-                                     <div class="bg-orange-100 p-1.5 rounded-lg text-orange-600">
-                                         <i class="fa-solid fa-handshake text-sm"></i>
-                                     </div>
-                                     <div>
-                                         <span class="font-bold block text-gray-800">Ukhwah Fillah</span>
-                                         Eratkan silaturrahim, borak sampai pagi.
-                                     </div>
-                                 </li>
-                             </ul>
-                        </div>
-                        
-                        <!-- Motto -->
-                        <div class="bg-gray-50 p-3 rounded-xl text-center border border-gray-100">
-                            <p class="text-[10px] font-bold text-gray-400 uppercase mb-1">Motto Rasmi</p>
-                            <p class="font-serif text-sm text-blue-900 font-bold">"Selagi Tak Dapat, Jangan Mimpi Nak Balik! Biar Rentung Di Laut, Janji Tak Malu Di Darat!"</p>
-                        </div>
                     </div>
                 </div>
 
