@@ -25,22 +25,22 @@
             padding: 0;
         } 
         
-        /* Wrapper for Mobile Screen Resolution and Scroll Effect */
+        /* Phone Frame + Auto Scale */
         #mobile-wrapper {
-            max-width: 480px; /* Max width for high-resolution mobile view */
-            /* Forces content wider than 480px to be scrollable horizontally */
-            min-width: 100%; 
+            width: 480px;               /* FIXED width – paling penting */
+            max-width: 480px;
             margin: 0 auto;
             min-height: 100vh;
-            background-color: #1e293b; /* Dark background inside the phone frame */
+            background-color: #1e293b;
             box-shadow: 0 0 30px rgba(0,0,0,0.5);
-            position: relative;
+            transform-origin: top center;
         }
-
-        @media (min-width: 481px) {
-             #mobile-wrapper {
-                min-width: 480px;
-             }
+        
+        /* AUTO SCALE untuk semua skrin kecil */
+        @media (max-width: 480px) {
+            #mobile-wrapper {
+                transform: scale(calc(100vw / 480)); /* skala layout */
+            }
         }
 
         .glass-panel {
