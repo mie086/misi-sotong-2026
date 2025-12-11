@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -20,12 +21,14 @@
             margin: 0; padding: 0;
             min-height: 100vh;
             display: flex; justify-content: center; align-items: flex-start;
-            padding-top: 20px; padding-bottom: 20px;
+            padding-top: 20px; padding-bottom: 10px;
         } 
 
         /* --- 2. MOBILE WRAPPER --- */
         #mobile-wrapper {
-            width: 100%; max-width: 440px; min-height: 95vh;
+            width: 100%; max-width: 440px; min-height: 100vh;
+            border-bottom-left-radius: 0; 
+            border-bottom-right-radius: 0;
             background-color: rgba(15, 23, 42, 0.60); 
             backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
             position: relative; z-index: 1; /* Layer rendah */
@@ -186,10 +189,19 @@
             </div>
 
             <div id="memberSection" class="glass-panel rounded-2xl shadow-sm overflow-hidden h-fit">
-                <div class="bg-gradient-to-r from-blue-900 to-slate-900 p-4 relative text-white border-b border-white/20">
-                    <h2 class="font-extrabold text-xl leading-snug">Tabung Pemburu</h2>
-                    <p class="text-xs font-medium text-blue-200 uppercase">Senarai Semak Pembayaran</p>
+                
+                <div class="bg-gradient-to-r from-blue-900 to-slate-900 p-4 relative text-white border-b border-white/20 overflow-hidden">
+                    
+                    <div class="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-20 text-blue-200">
+                        <i class="fa-solid fa-users text-5xl"></i>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h2 class="font-extrabold text-xl leading-snug"><i class="fa-solid fa-hand-holding-dollar"></i> Tabung Pemburu</h2>
+                        <p class="text-xs font-medium text-blue-200 uppercase">Senarai Semak Pembayaran</p>
+                    </div>
                 </div>
+
                 <div class="bg-white p-4 border-b border-gray-100">
                     <div class="flex justify-between items-end mb-2">
                         <div><p class="text-[10px] text-gray-500 uppercase font-bold">Terkumpul</p><h3 class="text-2xl font-bold text-emerald-600" id="tableSummaryCollected">RM 0</h3></div>
@@ -197,10 +209,11 @@
                     </div>
                     <div class="w-full bg-gray-100 rounded-full h-2 mb-1"><div id="tableSummaryProgress" class="bg-emerald-500 h-2 rounded-full transition-all duration-1000" style="width: 0%"></div></div>
                 </div>
+
                 <div class="overflow-x-auto max-h-[500px] overflow-y-auto">
                     <table class="w-full text-left border-collapse">
                         <thead class="sticky top-0 bg-gray-50 shadow-sm z-10">
-                            <tr class="text-gray-500 text-[10px] uppercase"><th class="p-3">Nama</th><th class="p-3 text-center">Prog.</th><th class="p-3 text-center">Bayar (RM)</th><th class="p-3 text-center">Rekod</th></tr>
+                            <tr class="text-gray-500 text-[10px] uppercase"><th class="p-3">Nama</th><th class="p-3 text-center">Prog.</th><th class="p-3 text-center">Bayar</th><th class="p-3 text-center">Rekod</th></tr>
                         </thead>
                         <tbody id="memberTableBody" class="divide-y divide-gray-100 bg-white text-xs"></tbody>
                     </table>
@@ -209,8 +222,15 @@
 
             <div id="expensesSection" class="glass-panel rounded-2xl shadow-sm overflow-hidden h-fit">
                 <div class="bg-[#78350f] p-4 text-white relative">
-                    <h2 class="font-bold text-lg mb-1 flex items-center gap-2"><i class="fa-solid fa-receipt"></i> Laporan Dana</h2>
-                    <p class="text-yellow-200 text-[10px] uppercase tracking-wider">Rekod Perbelanjaan</p>
+                    
+                    <div class="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-20 text-blue-200">
+                        <i class="fa-solid fa-chart-line text-6xl"></i>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h2 class="font-bold text-lg mb-1 flex items-center gap-2"><i class="fa-solid fa-receipt"></i> Laporan Dana</h2>
+                        <p class="text-yellow-200 text-[10px] uppercase tracking-wider">Rekod Perbelanjaan</p>
+                    </div>
                 </div>
                 
                 <div class="p-5 bg-white flex justify-between items-center text-center border-b border-gray-100">
@@ -256,9 +276,14 @@
                             <span><i class="fa-solid fa-fish text-emerald-500 mr-2"></i> Memancing</span><i class="fa-solid fa-chevron-down text-gray-400"></i>
                         </header>
                         <div class="category-body mt-2 pl-6 space-y-2 hidden">
-                            <div class="flex gap-2 items-center"><i class="fa-solid fa-angle-right text-gray-300 text-xs"></i><span class="text-xs">Joran & Mesin <span class="ml-2 text-xs font-medium text-white bg-red-500 rounded px-1">(wajib)</span></div>
-                            <div class="flex gap-2 items-center"><i class="fa-solid fa-angle-right text-gray-300 text-xs"></i><span class="text-xs">Candat (Spare) <span class="ml-2 text-xs font-medium text-white bg-red-500 rounded px-1">(wajib)</span></div>
-                            <div class="flex gap-2 items-center"><i class="fa-solid fa-angle-right text-gray-300 text-xs"></i><span class="text-xs">Sarung Tangan <span class="ml-2 text-xs font-medium text-emerald-700 rounded px-1 bg-emerald-50">(pilihan)</span></div>
+                            <div class="flex gap-2 items-center">
+                                <i class="fa-solid fa-angle-right text-gray-300 text-xs"></i>
+                                <span class="text-xs">Joran & Mesin <span class="ml-2 text-xs font-medium text-white bg-red-500 rounded px-1">(wajib)</span></span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <i class="fa-solid fa-angle-right text-gray-300 text-xs"></i>
+                                <span class="text-xs">Bekas <span class="ml-2 text-xs font-medium text-emerald-700 rounded px-1 bg-emerald-50">(pilihan)</span></span>
+                            </div>
                         </div>
                     </section>
                     
@@ -267,100 +292,186 @@
                             <span><i class="fa-solid fa-shirt text-blue-500 mr-2"></i> Pakaian</span><i class="fa-solid fa-chevron-down text-gray-400"></i>
                         </header>
                         <div class="category-body mt-2 pl-6 space-y-2 hidden">
-                            <div class="flex gap-2 items-center"><i class="fa-solid fa-angle-right text-gray-300 text-xs"></i><span class="text-xs">Baju Hujan <span class="ml-2 text-xs font-medium text-white bg-red-500 rounded px-1">(wajib)</span></div>
-                            <div class="flex gap-2 items-center"><i class="fa-solid fa-angle-right text-gray-300 text-xs"></i><span class="text-xs">Towel Kecil <span class="ml-2 text-xs font-medium text-white bg-red-500 rounded px-1">(wajib)</span></div>
+                            <div class="flex gap-2 items-center">
+                                <i class="fa-solid fa-angle-right text-gray-300 text-xs"></i>
+                                <span class="text-xs">Baju Hujan <span class="ml-2 text-xs font-medium text-white bg-red-500 rounded px-1">(wajib)</span></span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <i class="fa-solid fa-angle-right text-gray-300 text-xs"></i>
+                                <span class="text-xs">Towel Kecil <span class="ml-2 text-xs font-medium text-emerald-700 rounded px-1 bg-emerald-50">(pilihan)</span></span>
+                            </div>
                         </div>
                     </section>
                 </div>
             </div>
 
-            <div id="tentativeSection" class="glass-panel rounded-2xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="bg-indigo-900 p-4 text-white">
-                    <h3 class="font-bold text-sm flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-yellow-400"></i> Tentatif Program</h3>
+            <div id="tentativeSection" class="glass-panel rounded-2xl shadow-sm overflow-hidden h-fit">
+                
+                <div class="bg-indigo-900 p-4 text-white flex justify-between items-center">
+                    <h3 class="font-bold text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot text-yellow-400"></i> Tentatif Program
+                    </h3>
+                    <span class="text-[10px] text-indigo-200 bg-indigo-800 px-2 py-1 rounded">2H 1M</span>
                 </div>
-                <div class="p-4 bg-white relative text-xs space-y-4">
-                    <div class="absolute left-3.5 top-4 bottom-4 w-0.5 bg-gray-200"></div>
-                    <div class="relative pl-8">
-                        <div class="absolute left-0 top-0 w-7 h-7 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold z-10 text-[10px]">1</div>
-                        <h4 class="font-bold text-gray-800">8:00 AM (Hari 1)</h4>
-                        <p class="text-gray-500">Berkumpul & Bertolak ke Terengganu.</p>
+                
+                <div class="p-4 bg-white relative">
+                    <div class="absolute left-8 top-6 bottom-6 w-0.5 bg-gray-100"></div>
+                     
+                    <div class="space-y-6 relative">
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center shrink-0 z-10 border-2 border-white shadow-sm">
+                                <i class="fa-solid fa-bullhorn text-xs"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-gray-400 block mb-0.5 uppercase tracking-wide">8:00 AM (Hari 1)</span>
+                                <h4 class="font-bold text-sm text-gray-800">Taklimat Ringkas</h4>
+                                <p class="text-xs text-gray-500 mt-0.5">: Berkumpul di Tempat yang akan dimaklumkan kelak</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Ucapan aluan dan taklimat ringkas oleh <span class="font-bold text-gray-900">John & ManRemy</span></p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Bacaan Doa</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Sesi Bergambar</p>
+                            </div>
+                        </div>
+                         
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center shrink-0 z-10 border-2 border-white shadow-sm">
+                                <i class="fa-solid fa-car text-xs"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-gray-400 block mb-0.5 uppercase tracking-wide">8:30 AM (Hari 1)</span>
+                                <h4 class="font-bold text-sm text-gray-800">Bertolak ke Terengganu</h4>
+                                <p class="text-xs text-gray-500 mt-0.5">: Perjalanan selesa selama 5 jam dari KL ke Terengganu dengan Van VVIP</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Sarapan</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Solat Jamak Zohor & Asar / Jumaat</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Makan Tengahari</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Tiba di Homestay lebih kurang pukul 3.00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-emerald-100 text-emerald-600 w-8 h-8 rounded-full flex items-center justify-center shrink-0 z-10 border-2 border-white shadow-sm">
+                                <i class="fa-solid fa-ship text-xs"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-gray-400 block mb-0.5 uppercase tracking-wide">8:00 PM (Hari 1)</span>
+                                <h4 class="font-bold text-sm text-gray-800">Operasi Mencadat!</h4>
+                                <p class="text-xs text-gray-500 mt-0.5">: Bertolak menuju ke jeti</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Solat Jamak Magrib / Isyak</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Makan ringan sebelum menaik bot</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Bertolak dengan bot ke kawasan perairan Laut China Selatan</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Aktiviti bebas (Mencadat Sotong / Memancing)</p>
+                            </div>
+                        </div>
+                         
+                        <div class="flex gap-4 items-start relative">
+                             <div class="absolute left-0 top-8 bottom-0 w-8 bg-white z-0"></div>
+                         
+                            <div class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full flex items-center justify-center shrink-0 z-10 border-2 border-white shadow-sm relative">
+                                <i class="fa-solid fa-person-walking text-xs"></i>
+                            </div>
+                             
+                            <div class="relative z-10">
+                                <span class="text-[10px] font-bold text-gray-400 block mb-0.5 uppercase tracking-wide">4:00 AM (Hari 2)</span>
+                                <h4 class="font-bold text-sm text-gray-800">Bersurai</h4>
+                                <p class="text-xs text-gray-500 mt-0.5">: Bertolak pulang ke jeti</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Solat Subuh</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Sarapan</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Singgah membeli keropok sebelum pulang</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Bertolak pulang ke KL</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Tiba di KL sebelum asar</p>
+                                <p class="text-xs text-gray-500 mt-0.5">: Bersurai</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div id="helpSection" class="glass-panel rounded-2xl p-4 border-l-4 border-yellow-400 bg-white">
-                <h2 class="font-bold text-sm text-gray-800 mb-2 flex items-center gap-2"><i class="fa-solid fa-circle-question text-yellow-500"></i> Hubungi Admin</h2>
-                <div class="flex gap-2">
-                    <button onclick="toggleContactModal()" class="flex-1 py-2 bg-blue-50 text-blue-600 text-xs font-bold rounded border border-blue-100">John</button>
-                    <button onclick="toggleContactModal()" class="flex-1 py-2 bg-purple-50 text-purple-600 text-xs font-bold rounded border border-purple-100">ManRemy</button>
+            <div id="helpSection" class="glass-panel rounded-2xl shadow-sm overflow-hidden mt-6 scroll-mt-28 border-l-4 border-yellow-400 bg-white">
+                <div class="p-4 bg-yellow-50 border-b border-yellow-100 flex justify-between items-center">
+                    <h2 class="font-bold text-sm text-gray-800 flex items-center gap-2">
+                         <i class="fa-solid fa-circle-question text-yellow-500 text-lg"></i> Pusat Bantuan
+                    </h2>
+                    <span class="text-[10px] text-yellow-700 font-bold bg-yellow-200/50 px-2 py-1 rounded-full">Admin</span>
                 </div>
-             </div>
+                
+                <div class="p-5">
+                    <p class="text-xs text-gray-500 mb-3 text-center">Ada pertanyaan mengenai trip? Klik untuk hubungi:</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="toggleContactModal()" class="group py-3 bg-blue-50 hover:bg-blue-100 text-blue-600 hover:text-blue-700 border border-blue-200 rounded-xl transition-all active:scale-95 flex flex-col items-center justify-center gap-1 shadow-sm">
+                            <i class="fa-solid fa-robot text-lg mb-1 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold">John</span>
+                        </button>
+                        <button onclick="toggleContactModal()" class="group py-3 bg-purple-50 hover:bg-purple-100 text-purple-600 hover:text-purple-700 border border-purple-200 rounded-xl transition-all active:scale-95 flex flex-col items-center justify-center gap-1 shadow-sm">
+                            <i class="fa-solid fa-user-astronaut text-lg mb-1 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold">ManRemy</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        </div> </div> <button id="scrollToTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="bg-blue-600 text-white p-3 rounded-full shadow-lg"><i class="fa-solid fa-arrow-up"></i></button>
+            <div class="h-10 w-full"></div>
 
-    <div id="calendarModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center transition-opacity opacity-0">
+        </div> </div> <div id="calendarModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center transition-opacity opacity-0">
         <div class="bg-white rounded-2xl p-6 w-[95%] max-w-sm shadow-2xl transform scale-95 transition-transform duration-300 relative" id="calendarModalContent">
-            
             <div class="flex justify-between items-center mb-4">
                 <button onclick="changeMonth(-1)" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500"><i class="fa-solid fa-chevron-left"></i></button>
-                <div class="text-center">
-                    <h3 id="calTitle" class="text-lg font-bold text-slate-800">Loading...</h3>
-                    <p class="text-[10px] text-slate-500">Misi Pemburuan Sotong 2026</p>
-                </div>
+                <div class="text-center"><h3 id="calTitle" class="text-lg font-bold text-slate-800">Loading...</h3><p class="text-[10px] text-slate-500">Misi Pemburuan Sotong 2026</p></div>
                 <button onclick="changeMonth(1)" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
-    
-            <button onclick="closeCalendarModal()" class="absolute top-4 right-4 text-gray-300 hover:text-gray-500">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-    
+            <button onclick="closeCalendarModal()" class="absolute top-4 right-4 text-gray-300 hover:text-gray-500"><i class="fa-solid fa-xmark"></i></button>
             <div class="bg-slate-50 rounded-xl p-3 mb-4 border border-slate-100 min-h-[280px]">
-                <div class="grid grid-cols-7 text-center mb-2 border-b border-gray-200 pb-2">
-                    <span class="text-[10px] font-bold text-red-500">Ahd</span>
-                    <span class="text-[10px] font-bold text-slate-500">Isn</span>
-                    <span class="text-[10px] font-bold text-slate-500">Sel</span>
-                    <span class="text-[10px] font-bold text-slate-500">Rab</span>
-                    <span class="text-[10px] font-bold text-slate-500">Kha</span>
-                    <span class="text-[10px] font-bold text-emerald-600">Jum</span>
-                    <span class="text-[10px] font-bold text-emerald-600">Sab</span>
-                </div>
+                <div class="grid grid-cols-7 text-center mb-2 border-b border-gray-200 pb-2"><span class="text-[10px] font-bold text-red-500">Ahd</span><span class="text-[10px] font-bold text-slate-500">Isn</span><span class="text-[10px] font-bold text-slate-500">Sel</span><span class="text-[10px] font-bold text-slate-500">Rab</span><span class="text-[10px] font-bold text-slate-500">Kha</span><span class="text-[10px] font-bold text-emerald-600">Jum</span><span class="text-[10px] font-bold text-emerald-600">Sab</span></div>
                 <div id="calGrid" class="grid grid-cols-7 text-center gap-y-2 text-xs text-slate-600 font-medium"></div>
             </div>
-    
-            <div class="bg-blue-50 rounded-xl p-3 text-center mb-3 border border-blue-100">
-                 <span class="text-[10px] text-gray-500 block uppercase tracking-wide">Menuju 1 Mei 2026</span>
-                 <span id="modalCountdown" class="font-bold text-blue-600 text-sm">...</span>
-            </div>
-    
-            <button onclick="closeCalendarModal()" class="w-full py-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold transition shadow-md flex items-center justify-center gap-2">
-                Tutup Kalendar
-            </button>
+            <div class="bg-blue-50 rounded-xl p-3 text-center mb-3 border border-blue-100"><span class="text-[10px] text-gray-500 block uppercase tracking-wide">Menuju 1 Mei 2026</span><span id="modalCountdown" class="font-bold text-blue-600 text-sm">...</span></div>
+            <button onclick="closeCalendarModal()" class="w-full py-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold transition shadow-md flex items-center justify-center gap-2">Tutup Kalendar</button>
         </div>
     </div>
 
     <div id="adminContactModal" class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-[100]" onclick="toggleContactModal()">
-        <div class="bg-white rounded-xl p-6 w-[85%] max-w-sm text-center m-4">
+        <div class="bg-white rounded-xl p-6 w-[85%] max-w-sm text-center m-4" onclick="event.stopPropagation()">
             <h3 class="font-bold text-lg mb-2">Hubungi Admin</h3>
             <p class="text-sm text-gray-600 mb-4">Sila rujuk grup WhatsApp untuk sebarang pertanyaan.</p>
-            <button class="bg-slate-800 text-white px-6 py-2 rounded-lg text-sm">Tutup</button>
+            <button onclick="toggleContactModal()" class="bg-slate-800 text-white px-6 py-2 rounded-lg text-sm">Tutup</button>
         </div>
     </div>
 
-    <div id="detailsModal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-[100] backdrop-blur-sm">
-        <div class="bg-white rounded-xl p-5 w-full max-w-sm m-4" id="detailsModalContent">
+    <div id="detailsModal" onclick="closeDetailsModal()" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-[100] backdrop-blur-sm">
+        <div class="bg-white rounded-xl p-5 w-full max-w-sm m-4" id="detailsModalContent" onclick="event.stopPropagation()">
             <div class="flex justify-between border-b pb-2 mb-2">
                 <h3 class="font-bold" id="detailMemberName">Nama</h3>
                 <button onclick="closeDetailsModal()"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="bg-gray-50 p-3 rounded max-h-60 overflow-y-auto mb-3">
-                <table class="w-full text-xs">
-                    <tbody id="detailsTableBody"></tbody>
-                </table>
+                <table class="w-full text-xs"><tbody id="detailsTableBody"></tbody></table>
             </div>
             <div class="text-right font-bold text-emerald-600" id="detailTotal">RM 0</div>
         </div>
     </div>
 
+    <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[440px] z-[90]">
+        <div class="bg-slate-900/90 backdrop-blur-md border-t border-white/10 px-4 py-3 rounded-t-2xl shadow-[0_-5px_20px_rgba(0,0,0,0.5)]">
+            <div class="flex justify-between items-center text-[10px] font-medium text-gray-400">
+                <a href="#tentativeSection" class="flex flex-col items-center gap-1 hover:text-emerald-400 transition group w-1/5">
+                    <i class="fa-solid fa-map-location-dot text-lg mb-0.5 group-hover:-translate-y-1 transition-transform"></i><span>Tentatif</span>
+                </a>
+                <button onclick="openCalendarModal()" class="flex flex-col items-center gap-1 hover:text-blue-400 transition group w-1/5">
+                    <i class="fa-solid fa-calendar-days text-lg mb-0.5 group-hover:-translate-y-1 transition-transform"></i><span>Kalendar</span>
+                </button>
+                <div class="relative w-1/5 flex justify-center">
+                    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="absolute -top-8 bg-gradient-to-tr from-emerald-500 to-blue-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg border-4 border-slate-900 hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-house text-xl"></i>
+                    </button>
+                    <span class="mt-7 font-semibold text-white">Utama</span>
+                </div>
+                <a href="#memberSection" class="flex flex-col items-center gap-1 hover:text-yellow-400 transition group w-1/5">
+                    <i class="fa-solid fa-users text-lg mb-0.5 group-hover:-translate-y-1 transition-transform"></i><span>Tabung</span>
+                </a>
+                <a href="#expensesSection" class="flex flex-col items-center gap-1 hover:text-red-400 transition group w-1/5">
+                    <i class="fa-solid fa-chart-pie text-lg mb-0.5 group-hover:-translate-y-1 transition-transform"></i><span>Dana</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script>
         const TARGET_PER_PERSON = 500;
@@ -392,12 +503,6 @@
             renderExpenses();
             startImageSlider();
             initChecklist();
-            
-            const scrollBtn = document.getElementById('scrollToTopBtn');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) scrollBtn.classList.add('show');
-                else scrollBtn.classList.remove('show');
-            });
         });
 
         // --- HELPER TIME (PENTING!) ---
@@ -532,7 +637,7 @@
                             <div class="w-16 mx-auto bg-gray-200 rounded-full h-1"><div class="bg-emerald-500 h-1 rounded-full" style="width:${pct}%"></div></div>
                             <div class="text-[10px] text-gray-400">${Math.round(pct)}%</div>
                         </td>
-                        <td class="p-3 text-right font-mono text-emerald-600 font-bold">${m.paid}</td>
+                        <td class="p-3 text-center font-mono text-emerald-600 font-bold">${m.paid}</td>
                         <td class="p-3 text-center"><button onclick="openDetails(${m.id})" class="text-blue-400 hover:text-blue-600"><i class="fa-solid fa-list"></i></button></td>
                     </tr>`;
             });
