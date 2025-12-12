@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -92,12 +93,19 @@
                     </div>
                     <div>
                         <h1 class="font-bold text-lg leading-tight tracking-wide uppercase">
-                            <span class="text-emerald-300">Misi Sotong</span> 2026
+                            <span class="text-emerald-300">Misi Pemburuan Sotong</span>
+                            <span class="block">2026</span>
                         </h1>
                         <div class="text-xs text-blue-200 opacity-90 mt-0.5">
-                            <p onclick="openCalendarModal()" class="flex items-center gap-1 cursor-pointer hover:text-emerald-300 transition">
-                                <i class="fa-solid fa-calendar-days text-[10px]"></i> 1 Mei 2026
-                            </p>
+                            <p class="flex items-center gap-1 hover:text-emerald-300 transition duration-200" title="Lihat Kalendar">
+                                <i class="fa-solid fa-calendar-days text-[10px]"></i>
+                            
+                                <span 
+                                    onclick="openCalendarModal()" 
+                                    class="cursor-pointer hover:scale-105 underline decoration-dotted underline-offset-4 inline-block"
+                                >
+                                    1 Mei 2026
+                                </span>
                         </div>
                     </div>
                 </div> 
@@ -193,12 +201,27 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-4 border-b border-gray-100">
-                    <div class="flex justify-between items-end mb-2">
-                        <div><p class="text-[10px] text-gray-500 uppercase font-bold">Terkumpul</p><h3 class="text-2xl font-bold text-emerald-600" id="tableSummaryCollected">RM 0</h3></div>
-                        <div class="text-right"><p class="text-[10px] text-gray-400">Target</p><p class="text-sm font-bold text-gray-700">RM 5,000</p></div>
+                <div class="bg-white pt-4 pb-0.5 px-4 border-b border-gray-100">
+                    <div class="flex justify-between items-end mb-3">
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase font-bold">Terkumpul :</p>
+                            <h3 class="text-2xl font-bold text-emerald-600" id="tableSummaryCollected">RM 0</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[10px] text-gray-400 text-left">Target :</p>
+                            <p class="text-sm font-bold text-gray-700">RM 5,000</p>
+                        </div>
                     </div>
-                    <div class="w-full bg-gray-100 rounded-full h-2 mb-1"><div id="tableSummaryProgress" class="bg-emerald-500 h-2 rounded-full transition-all duration-1000" style="width: 0%"></div></div>
+                
+                    <div class="w-full">
+                        <div class="w-full bg-gray-100 rounded-full h-2.5 mb-1">
+                            <div id="tableSummaryProgress" class="bg-emerald-500 h-2.5 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <span id="summaryPercentage" class="text-xs font-bold text-gray-400">0%</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="overflow-x-auto"> 
@@ -219,7 +242,7 @@
                     </div>
 
                     <div class="relative z-10">
-                        <h2 class="font-bold text-lg mb-1 flex items-center gap-2"><i class="fa-solid fa-receipt"></i> Laporan Dana</h2>
+                        <h2 class="font-bold text-lg mb-1 flex items-center gap-2"><i class="fa-solid fa-chart-pie"></i> Laporan Dana</h2>
                         <p class="text-yellow-200 text-[10px] uppercase tracking-wider">Rekod Perbelanjaan</p>
                     </div>
                 </div>
@@ -411,7 +434,7 @@
             <button onclick="closeCalendarModal()" class="absolute top-4 right-4 text-gray-300 hover:text-gray-500"><i class="fa-solid fa-xmark"></i></button>
             <div class="bg-slate-50 rounded-xl p-3 mb-4 border border-slate-100 min-h-[280px]">
                 <div class="grid grid-cols-7 text-center mb-2 border-b border-gray-200 pb-2"><span class="text-[10px] font-bold text-red-500">Ahd</span><span class="text-[10px] font-bold text-slate-500">Isn</span><span class="text-[10px] font-bold text-slate-500">Sel</span><span class="text-[10px] font-bold text-slate-500">Rab</span><span class="text-[10px] font-bold text-slate-500">Kha</span><span class="text-[10px] font-bold text-emerald-600">Jum</span><span class="text-[10px] font-bold text-emerald-600">Sab</span></div>
-                <div id="calGrid" class="grid grid-cols-7 text-center gap-y-2 text-xs text-slate-600 font-medium"></div>
+                <div id="calGrid" class="grid grid-cols-7 text-center gap-y-2 text-xs text-slate-600 font-medium"></div><div class="mt-4 flex justify-center gap-3 border-t border-gray-200 pt-3"><div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-blue-500"></div><span class="text-[10px] text-gray-500">Hari Ini</span></div><div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-emerald-500"></div><span class="text-[10px] text-gray-500">Memburu Sotong!</span></div></div>
             </div>
             <div class="bg-blue-50 rounded-xl p-3 text-center mb-3 border border-blue-100"><span class="text-[10px] text-gray-500 block uppercase tracking-wide">Menuju 1 Mei 2026</span><span id="modalCountdown" class="font-bold text-blue-600 text-sm">...</span></div>
             <button onclick="closeCalendarModal()" class="w-full py-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold transition shadow-md flex items-center justify-center gap-2">Tutup Kalendar</button>
@@ -567,7 +590,7 @@
             for (let day = 1; day <= daysInMonth; day++) {
                 let cellClass = "w-7 h-7 flex items-center justify-center rounded-full mx-auto transition cursor-default";
                 const isToday = (day === today.getDate() && month === today.getMonth() && year === today.getFullYear());
-                const isTripDay = (year === 2026 && month === 4 && (day === 1 || day === 2 || day === 3)); // Mei 2026
+                const isTripDay = (year === 2026 && month === 4 && (day === 1 || day === 2));
                 
                 if (isTripDay) {
                     cellClass += " bg-emerald-500 text-white shadow-lg shadow-emerald-200 font-bold scale-110";
@@ -629,13 +652,14 @@
                             <div class="text-[10px] text-gray-400">${Math.round(pct)}%</div>
                         </td>
                         <td class="p-3 text-center font-mono text-emerald-600 font-bold">${m.paid}</td>
-                        <td class="p-3 text-center"><button onclick="openDetails(${m.id})" class="text-blue-400 hover:text-blue-600"><i class="fa-solid fa-list"></i></button></td>
+                        <td class="p-3 text-center"><button onclick="openDetails(${m.id})" class="text-blue-400 hover:text-blue-600"><i class="fa-solid fa-receipt"></i></button></td>
                     </tr>`;
             });
             document.getElementById('tableSummaryCollected').innerText = formatCurrency(totalCollected);
             const globalPct = (totalCollected / (members.length * TARGET_PER_PERSON)) * 100;
             document.getElementById('tableSummaryProgress').style.width = globalPct + '%';
             updateExpensesSummary(totalCollected);
+            document.getElementById('summaryPercentage').innerText = Math.round(globalPct) + '%';
         }
 
         function openDetails(id) {
